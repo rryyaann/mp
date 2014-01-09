@@ -1,4 +1,5 @@
 Mp::Application.routes.draw do
+  devise_for :users
   root "pages#home"
   get "pricing" => "pages#pricing"
   get "where" => "pages#where"

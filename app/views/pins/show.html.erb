@@ -1,10 +1,23 @@
-<p id="notice"><%= notice %></p>
-
-<p>
-  <strong>Review:</strong>
-  <%= @pin.description %>
-  <%= image_tag @pin.image.url(:thumb) %>
-</p>
-
-<%= link_to 'Edit', edit_pin_path(@pin) %> |
 <%= link_to 'Back', pins_path %>
+
+<div class="row">
+  <div class="col-md-offset-2 col-md-8">
+    <div class="panel panel-default">
+      <div class="panel-heading center">
+        <%= image_tag @pin.image.url(:medium) %>
+      </div>
+      <div class="panel-body">
+      	<div class="panel-body center">
+        <span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span>
+      </br>
+        <p><%= @pin.description %></p>
+        <p><strong><%= @pin.user.email if @pin.user %></strong></p>
+
+        <% if @pin.user == current_user %>
+         <%= link_to 'Edit', edit_pin_path(@pin) %>
+        <% end %>
+
+      </div>
+    </div>
+  </div>
+</div>

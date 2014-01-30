@@ -21,11 +21,11 @@
         <li><button type="button" class="btn btn-default navbar-btn"><%= link_to book_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now<% end %></button>
         </li>
         <% if user_signed_in? %>
-          <li><%= link_to "Settings", edit_user_registration_path %></li>
+          <li><%= link_to "My Account", edit_user_registration_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
           <li><%= link_to "Sign in", new_user_session_path %></li>
-          <li><%= link_to "Sign up", new_user_registration_path %></li>
+          <li><%= link_to "Sign up for 10% off", new_user_registration_path %></li>
         <% end %>
     </ul>
   </div><!-- /.navbar-collapse -->

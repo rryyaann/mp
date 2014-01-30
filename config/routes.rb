@@ -2,7 +2,7 @@ Mp::Application.routes.draw do
   resources :pins
 
   devise_for :users
-  root "pages#home"
+  root "pins#index"
   get "pricing" => "pages#pricing"
   get "where" => "pages#where"
   get "safety" => "pages#safety"

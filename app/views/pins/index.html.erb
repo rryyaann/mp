@@ -1,7 +1,13 @@
+<%= render 'pages/hometop' %>
+
+<hr class="featurette-divider">
+
+<h3 class="white center">Our Most Recent 5 Star Maid Ratings:</h3>
+
 <div id="pins" class="transitions-enabled">
   <% @pins.each do |pin| %>
     <div class="box panel panel-default">
-      <%= image_tag pin.image.url(:medium) %>
+      <%= image_tag pin.image.url(:thumb) %>
       <div class="panel-body center">
         <span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span>
       </br>
@@ -15,3 +21,5 @@
     </div>
   <% end %>
 </div>
+
+<%= render 'pages/homebottom' %>

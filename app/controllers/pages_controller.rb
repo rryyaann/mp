@@ -9,4 +9,6 @@ class PagesController < ApplicationController
   end
   def safety
   end
+  def profile
+  end
 end

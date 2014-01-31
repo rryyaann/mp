@@ -10,7 +10,10 @@
       	<div class="panel-body center">
         <span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span><span class="glyphicon glyphicon-star star"></span>
       </br>
-        <p><%= @pin.description %></p>
+        <p><strong>Maid: <%= @pin.maid %></strong></p>
+        <p><%= @pin.date %></p>
+        <p><%= @pin.neighborhood %></p>
+        <p>"<%= @pin.description %>"</p>
         <p><strong><%= @pin.user.email if @pin.user %></strong></p>
 
         <% if @pin.user == current_user %>

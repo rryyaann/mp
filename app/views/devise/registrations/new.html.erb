@@ -30,6 +30,15 @@
        <%= f.text_field :zip, class: "form-control" %>
      </div>
 
+   </br>
+
+     <div class="form-group">
+       <%= f.label :number_of_bedrooms %> <i> (Please enter a number, example: "2", not "2 bedrooms")</i>
+       <%= f.text_field :rooms, class: "form-control" %>
+     </div>
+
+   </br>
+
       <div class="form-group">
         <%= f.label :email %>
         <%= f.email_field :email, class: "form-control" %>
@@ -44,6 +53,31 @@
         <%= f.label :password %>
         <%= f.password_field :password, class: "form-control" %>
       </div>
+
+      <hr class="featurette-divider belize">
+      <h3 class="belize">Special notes for your maid</h3>
+
+    </br>
+
+      <div class="form-group">
+       <%= f.label :entry_and_keys_info %>
+       <%= f.text_area :keys, class: "form-control" %>
+     </div>
+
+     <div class="form-group">
+       <%= f.label :location_of_trash %>
+       <%= f.text_area :trash, class: "form-control" %>
+     </div>
+
+     <div class="form-group">
+       <%= f.label :pets %>
+       <%= f.text_area :pets, class: "form-control" %>
+     </div>
+
+     <div class="form-group">
+       <%= f.label :parking_info %>
+       <%= f.text_area :parking, class: "form-control" %>
+     </div>
 
       <div class="form-group">
         <%= f.submit "Sign up", class: "btn btn-primary" %>

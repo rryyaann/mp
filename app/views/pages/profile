@@ -1,0 +1,45 @@
+<div class="panel panel-default customerinfo">
+  <div class="panel-heading">
+    <div class="panel-title center">
+      <h3 class="emerald"><span class="glyphicon glyphicon-home emerald"></span>  Customer Information</h3>
+    </div>
+  </div>
+  <div class="panel-body">
+
+		<h4 class="belize"><strong><%= current_user.name %></strong></h4>
+		</br>
+		<p><strong>Address to be Cleaned:</strong>
+		<p><%= current_user.address %></p>
+		<p><%= current_user.city %></p>
+		<p><%= current_user.zip %></p>
+		</br>
+		<p><strong>Number of bedrooms:</strong> <%= current_user.rooms %></p>
+		</br>
+
+		<p><strong>Email: </strong><%= current_user.email %></p>
+		<p><strong>Phone: </strong><%= current_user.phone %></p>
+		</br>
+		<button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
+
+		</div>
+		</div>
+
+<div class="panel panel-default customerinfo">
+  <div class="panel-heading">
+    <div class="panel-title center">
+      <h3 class="emerald"><span class="glyphicon glyphicon-comment emerald"></span>  Notes for your Maid</h3>
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+  <p><strong>Maid entry: </strong><%= current_user.keys %></p>
+  <p><strong>Parking info: </strong><%= current_user.parking %></p>
+  <p><strong>Pet info: </strong><%= current_user.pets %></p>
+  <p><strong>Location of trash: </strong><%= current_user.trash %></p>
+
+  </br>
+
+  <button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
+
+     </div>

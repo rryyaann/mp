@@ -17,13 +17,12 @@
       <li><%= link_to "Home", root_path %></li>
       <li><%= link_to "Pricing", pricing_path %></li> 
       <li><%= link_to "Where", where_path %></li>
-
-        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to book_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now<% end %></button>
-        </li>
         <% if user_signed_in? %>
+        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to profile_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now<% end %></button></li>
           <li><%= link_to "My Account", profile_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
+        <li><button type="button" class="btn btn-default navbar-btn"><%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now<% end %></button></li>
           <li><%= link_to "Sign in", new_user_session_path %></li>
           <li><%= link_to "Sign up for 10% off", new_user_registration_path %></li>
         <% end %>

@@ -1,25 +1,41 @@
 <div class="panel panel-default customerinfo">
   <div class="panel-heading">
     <div class="panel-title center">
-      <h3 class="emerald"><span class="glyphicon glyphicon-home emerald"></span>  Customer Information</h3>
+      <h4 class="emerald"><span class="glyphicon glyphicon-home emerald"></span> &nbsp;&nbsp;&nbsp; Your Home Info</h4>
     </div>
   </div>
   <div class="panel-body">
 
 		<h4 class="belize"><strong><%= current_user.name %></strong></h4>
-		</br>
 		<p><strong>Address to be Cleaned:</strong>
 		<p><%= current_user.address %></p>
 		<p><%= current_user.city %></p>
 		<p><%= current_user.zip %></p>
-		</br>
-		<p><strong>Number of bedrooms:</strong> <%= current_user.rooms %></p>
-		</br>
-
 		<p><strong>Email: </strong><%= current_user.email %></p>
 		<p><strong>Phone: </strong><%= current_user.phone %></p>
+
 		</br>
-		<button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
+
+    <p><strong>Number of bedrooms:</strong> <%= current_user.bedrooms %></p>
+     <p><strong>Your Standard Cleaning Price:</strong><% if current_user.bedrooms == 1 %>
+    <%= "$75" %> 
+    <% elsif current_user.bedrooms == 2 %>
+    <%= "$95" %> 
+    <% elsif current_user.bedrooms == 3 %>
+    <%= "$115" %>  
+    <% elsif current_user.bedrooms == 4 %>
+    <%= "$135" %> 
+    <% elsif current_user.bedrooms == 5 %>
+    <%= "$155" %> 
+    <% elsif current_user.bedrooms == 6 %>
+    <%= "$185" %>
+    </p>
+  <% end %>
+  
+  </br> 
+  </br>
+
+		<button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span> Edit Info<% end %></button>
 
 		</div>
 		</div>
@@ -27,7 +43,7 @@
 <div class="panel panel-default customerinfo">
   <div class="panel-heading">
     <div class="panel-title center">
-      <h3 class="emerald"><span class="glyphicon glyphicon-comment emerald"></span>  Notes for your Maid</h3>
+      <h4 class="emerald"><span class="glyphicon glyphicon-comment emerald"></span> &nbsp;&nbsp;&nbsp; Notes for your Maid</h4>
     </div>
   </div>
 
@@ -38,8 +54,12 @@
   <p><strong>Pet info: </strong><%= current_user.pets %></p>
   <p><strong>Location of trash: </strong><%= current_user.trash %></p>
 
+
   </br>
 
   <button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
 
-     </div>
+</div>
+
+
+     

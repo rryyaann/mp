@@ -8,6 +8,7 @@ Mp::Application.routes.draw do
   get "safety" => "pages#safety"
   get "book" => "pages#book"
   get "profile" => "pages#profile"
+ 
 
 
 

@@ -17,6 +17,7 @@ protected
    devise_parameter_sanitizer.for(:sign_up) << :trash
    devise_parameter_sanitizer.for(:sign_up) << :pets
    devise_parameter_sanitizer.for(:sign_up) << :parking
+   devise_parameter_sanitizer.for(:sign_up) << :bedrooms
    devise_parameter_sanitizer.for(:account_update) << :name 
    devise_parameter_sanitizer.for(:account_update) << :phone
    devise_parameter_sanitizer.for(:account_update) << :address
@@ -27,5 +28,6 @@ protected
    devise_parameter_sanitizer.for(:account_update) << :trash
    devise_parameter_sanitizer.for(:account_update) << :pets
    devise_parameter_sanitizer.for(:account_update) << :parking
+   devise_parameter_sanitizer.for(:account_update) << :bedrooms
  end
 end

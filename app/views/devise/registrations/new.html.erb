@@ -1,6 +1,6 @@
 
 
-<div class="panel panel-default">
+<div class="panel panel-default narrower">
   <div class="panel-heading">
     <h2 class="emerald">Sign Up Now</h2>
     <h4 class="belize">Maids will be a click away</h4>
@@ -32,10 +32,10 @@
 
    </br>
 
-     <div class="form-group">
-       <%= f.label :number_of_bedrooms %> <i> (Please enter a number, example: "2", not "2 bedrooms")</i>
-       <%= f.text_field :rooms, class: "form-control" %>
-     </div>
+     <div>
+     <%= f.label :select_home_size %> 
+     <%= f.select(:bedrooms, options_for_select([['Studio or 1 bedroom', 1], ['2 bedrooms', 2], ['3 bedrooms', 3], ['4 bedrooms', 4], ['5 bedrooms', 5], ['6 bedrooms', 6]])) %>
+   </div>
 
    </br>
 

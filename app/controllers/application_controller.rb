@@ -8,6 +8,7 @@ protected
 
  def configure_permitted_parameters
    devise_parameter_sanitizer.for(:sign_up) << :name 
+   devise_parameter_sanitizer.for(:sign_up) << :lastname
    devise_parameter_sanitizer.for(:sign_up) << :phone
    devise_parameter_sanitizer.for(:sign_up) << :address
    devise_parameter_sanitizer.for(:sign_up) << :city
@@ -19,6 +20,7 @@ protected
    devise_parameter_sanitizer.for(:sign_up) << :parking
    devise_parameter_sanitizer.for(:sign_up) << :bedrooms
    devise_parameter_sanitizer.for(:account_update) << :name 
+   devise_parameter_sanitizer.for(:account_update) << :lastname 
    devise_parameter_sanitizer.for(:account_update) << :phone
    devise_parameter_sanitizer.for(:account_update) << :address
    devise_parameter_sanitizer.for(:account_update) << :city

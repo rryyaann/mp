@@ -1,3 +1,5 @@
+<%= render 'pages/profilemessage' %>
+
 <div class="panel panel-default customerinfo">
   <div class="panel-heading">
     <div class="panel-title center">
@@ -6,8 +8,8 @@
   </div>
   <div class="panel-body">
 
-		<h4 class="belize"><strong><%= current_user.name %></strong></h4>
-		<p><strong>Address to be Cleaned:</strong>
+		<h4 class="belize"><strong><%= current_user.name %> <%= current_user.lastname %></strong></h4>
+		<p><strong>Address to be cleaned:</strong></p>
 		<p><%= current_user.address %></p>
 		<p><%= current_user.city %></p>
 		<p><%= current_user.zip %></p>

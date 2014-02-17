@@ -1,4 +1,6 @@
 Mp::Application.routes.draw do
+  resources :cleanings
+
   resources :pins
 
   devise_for :users

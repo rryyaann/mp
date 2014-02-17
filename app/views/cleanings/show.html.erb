@@ -1,0 +1,14 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Date:</strong>
+  <%= @cleaning.date %>
+</p>
+
+<p>
+  <strong>Time:</strong>
+  <%= @cleaning.time %>
+</p>
+
+<%= link_to 'Edit', edit_cleaning_path(@cleaning) %> |
+<%= link_to 'Back', cleanings_path %>

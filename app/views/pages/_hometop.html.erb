@@ -2,13 +2,14 @@
 <div class="jumbotron tile center belize">
   <div class="container">
 	<h1>Get Your Home Cleaned</h1>
-  <h2>You deserve it, Los Angeles!</h2>
-
+  <h2>You deserve it, <% if user_signed_in? %>
+    <%= current_user.name do %><% end %><% else %> Los Angeles!</h2><% end %>
 
   </br>
 
 	<div>
     <% if user_signed_in? %>
+  </br>
 	<button type="button" class="btn btn-default btn-lg"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now <% end %></button>
     <% else %>
       <button type="button" class="btn btn-default btn-lg"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now <% end %></button>

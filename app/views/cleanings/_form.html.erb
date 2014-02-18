@@ -12,10 +12,10 @@
     </div>
   <% end %>
 
-<div class="panel panel-default">
+<div class="panel panel-default bookingform">
   <div class="panel-heading">
-    <div class="panel-title">
-      <h1 class="belize"><span class="glyphicon glyphicon-calendar"></span> Schedule A Maid</h1>
+    <div class="panel-title center">
+      <h2 class="belize"><span class="glyphicon glyphicon-calendar"></span> You are 10 secs away from scheduling a maid, <%= current_user.name %>!</h2>
     </div>
   </div>
 
@@ -59,11 +59,14 @@
      </div>
   </div>
 </br>
+</br>
+
 
 
   <div class="form-group">
-    <%= f.submit "Schedule Cleaning", class: "btn btn-success" %>
+    <%= f.submit "Schedule Your Cleaning", class: "btn btn-success btn-lg" %>
   </div>
+ 
 </div>
 </div>
 <% end %>

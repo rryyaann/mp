@@ -1,5 +1,7 @@
 class CleaningsController < ApplicationController
   before_action :set_cleaning, only: [:show, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_filter :check_user, only: [:edit, :update, :destroy]
 
   # GET /cleanings
   # GET /cleanings.json
@@ -70,6 +72,6 @@ class CleaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaning_params
-      params.require(:cleaning).permit(:schedule)
+      params.require(:cleaning).permit(:month, :day, :hour, :minute, :ampm)
     end
 end

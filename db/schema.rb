@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140218033935) do
+ActiveRecord::Schema.define(version: 20140218063252) do
 
   create_table "cleanings", force: true do |t|
     t.datetime "created_at"
@@ -21,6 +21,7 @@ ActiveRecord::Schema.define(version: 20140218033935) do
     t.integer  "day"
     t.integer  "hour"
     t.integer  "minute"
+    t.integer  "ampm"
   end
 
   create_table "pins", force: true do |t|

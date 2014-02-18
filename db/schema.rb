@@ -11,14 +11,13 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140217082002) do
+ActiveRecord::Schema.define(version: 20140218002250) do
 
   create_table "cleanings", force: true do |t|
-    t.date     "date"
-    t.time     "time"
     t.datetime "created_at"
     t.datetime "updated_at"
     t.integer  "user_id"
+    t.string   "schedule"
   end
 
   create_table "pins", force: true do |t|

@@ -14,8 +14,7 @@
   <tbody>
     <% @cleanings.each do |cleaning| %>
       <tr>
-        <td><%= cleaning.date %></td>
-        <td><%= cleaning.time %></td>
+        <td><%= cleaning.schedule %></td>
         <td><%= link_to 'Show', cleaning %></td>
         <td><%= link_to 'Edit', edit_cleaning_path(cleaning) %></td>
         <td><%= link_to 'Destroy', cleaning, method: :delete, data: { confirm: 'Are you sure?' } %></td>

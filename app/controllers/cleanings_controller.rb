@@ -25,6 +25,7 @@ class CleaningsController < ApplicationController
   # POST /cleanings.json
   def create
     @cleaning = Cleaning.new(cleaning_params)
+    @cleaning.user_id = current_user.id
 
     respond_to do |format|
       if @cleaning.save
@@ -69,6 +70,6 @@ class CleaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaning_params
-      params.require(:cleaning).permit(:date, :time)
+      params.require(:cleaning).permit(:schedule)
     end
 end

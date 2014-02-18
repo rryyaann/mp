@@ -12,15 +12,12 @@
     </div>
   <% end %>
 
-  <div class="field">
-    <%= f.label :date %><br>
-    <%= f.date_select :date %>
+  <div class="form-group">
+    <%= f.label :When_would_you_like_your_cleaning? %><br>
+    <%= f.text_field :schedule, autofocus: true, class: "form-control" %>
   </div>
-  <div class="field">
-    <%= f.label :time %><br>
-    <%= f.time_select :time %>
-  </div>
-  <div class="actions">
-    <%= f.submit %>
+
+  <div class="form-group">
+    <%= f.submit "Schedule Cleaning", class: "btn btn-primary" %>
   </div>
 <% end %>

@@ -1,6 +1,6 @@
 class Cleaning < ActiveRecord::Base
 
-	validates :date, :time, presence: true
+	validates :schedule, presence: true
 
 	belongs_to :user
 end

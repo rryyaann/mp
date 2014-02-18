@@ -1,10 +1,12 @@
+<div class="container">
+
 <div class="panel panel-default signins">
   <div class="panel-heading whiteback">
     <div class="panel-title center">
       <h3 class="belize">Welcome Back</h3>
     </div>
   </div>
-  <div class="panel-body tile">
+  <div class="panel-body emeraldback">
     <%= form_for(resource, :as => resource_name, :url => session_path(resource_name)) do |f| %>
 
       <div class="form-group">
@@ -32,4 +34,6 @@
   <div class="panel-footer">
     <%= render "devise/shared/links" %>
   </div>
+</div>
+
 </div>

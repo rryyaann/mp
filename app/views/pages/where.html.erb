@@ -65,9 +65,13 @@
 <img class="img-rounded img-thumbnail" <%= image_tag "lamap.png"%>
 
 </br>
-</br>
 
-<button type="button" class="btn btn-default btn-lg "><%= link_to book_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now <% end %></button>
+ <% if user_signed_in? %>
+  </br>
+	<button type="button" class="btn btn-default btn-lg"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now <% end %></button>
+    <% else %>
+      <button type="button" class="btn btn-default btn-lg"><%= link_to new_user_registration_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now <% end %></button>
+      <% end %>
 </div>
 </div>
 

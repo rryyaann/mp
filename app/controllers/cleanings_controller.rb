@@ -1,12 +1,16 @@
 class CleaningsController < ApplicationController
   before_action :set_cleaning, only: [:show, :edit, :update, :destroy]
-  before_filter :authenticate_user!, only: [:show, :new, :create, :edit, :update, :destroy]
+  before_filter :authenticate_user!, only: [:account, :show, :new, :create, :edit, :update, :destroy]
   before_filter :check_user, only: [:edit, :update, :destroy]
+
+  def account
+    @cleanings = Cleaning.where(user: current_user).order("created_at DESC")
+  end
 
   # GET /cleanings
   # GET /cleanings.json
   def index
-    @cleanings = Cleaning.all
+    @cleanings = Cleaning.all.order("created_at DESC")
   end
 
   # GET /cleanings/1

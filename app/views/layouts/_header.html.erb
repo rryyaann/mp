@@ -21,6 +21,7 @@
         <% if user_signed_in? %>
         <li><button type="button" class="btn btn-default navbar-btn"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Book a Maid Now<% end %></button></li>
           <li><%= link_to "My Account", profile_path %></li>
+          <li><%= link_to "Account", account_path %></li>
           <li><%= link_to "Log out", destroy_user_session_path, method: :delete %></li>
         <% else %>
         <li><button type="button" class="btn btn-default navbar-btn"><%= link_to new_user_session_path do %><span class="glyphicon glyphicon-user"></span>  Already a Regular? Sign In<% end %></button></li>

@@ -1,0 +1,28 @@
+<h1>Listing cleanings</h1>
+
+<table>
+  <thead>
+    <tr>
+      <th>Date</th>
+      <th>Time</th>
+      <th></th>
+      <th></th>
+      <th></th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <% @cleanings.each do |cleaning| %>
+      <tr>
+        <td><%= cleaning.month %></td>
+        <td><%= link_to 'Show', cleaning %></td>
+        <td><%= link_to 'Edit', edit_cleaning_path(cleaning) %></td>
+        <td><%= link_to 'Destroy', cleaning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+      </tr>
+    <% end %>
+  </tbody>
+</table>
+
+<br>
+
+<%= link_to 'New Cleaning', new_cleaning_path %>

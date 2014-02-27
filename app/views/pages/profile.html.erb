@@ -35,11 +35,6 @@
     <%= "$185" %>
     </p>
   <% end %>
-  
-  </br> 
-  </br>
-
-		<button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span> Edit Info<% end %></button>
 
 		</div>
 		</div>
@@ -58,11 +53,6 @@
   <p><strong>Pet info: </strong><%= current_user.pets %></p>
   <p><strong>Location of trash: </strong><%= current_user.trash %></p>
 
-
-  </br>
-
-  <button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
-
 </div>
 
 </div>
@@ -78,14 +68,17 @@
 
   <p>Some kind of content should go here, perhaps a contact form, a form to buy gift cleanings, a form to refer friends, special offers, or cleaning history, or all of the above?</p>
 
-
-  </br>
-
-  <button type="button" class="btn btn-default btn-sm"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
-
 </div>
 
 </div>
+
+<div class="col-xs-12 centering center whiteback zeromargtop">
+</br>
+  <button type="button" class="btn btn-default btn"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
+</br>
+</br>
+</div>
+
 
 </div>
 

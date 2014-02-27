@@ -1,8 +1,10 @@
 
-<div class="jumbotron tile center belize">
+<div class="jumbotron whiteback center">
+
   <div class="container">
-	<h1>Get Your Home Cleaned</h1>
-  <h2>You deserve it, <% if user_signed_in? %>
+
+	<h1 class="belize">Get Your Home Cleaned</h1>
+  <h2 class="belize">You deserve it, <% if user_signed_in? %>
     <%= current_user.name do %><% end %><% else %> Los Angeles!</h2><% end %>
 
   </br>
@@ -18,8 +20,10 @@
  
 
   <%= link_to safety_path do %>
-  <h4 class="text-muted center">&nbsp;&nbsp;&nbsp;&nbsp;Your home is your castle  &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-tower star"></span>&nbsp;&nbsp;&nbsp;  Learn about MaidPing safety</h4>
+  <h4 class="text-muted center marg">&nbsp;&nbsp;&nbsp;&nbsp;Your home is your castle  &nbsp;&nbsp;&nbsp;<span class="glyphicon glyphicon-tower star"></span>&nbsp;&nbsp;&nbsp;  Learn about MaidPing safety</h4>
   <% end %>
+
 </div>
+
 </div>
 

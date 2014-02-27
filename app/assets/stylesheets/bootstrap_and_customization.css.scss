@@ -39,7 +39,7 @@ background-color: #ecf0f1;
 }
 
 .belize {
-color: #2980b9;
+color: #2980b9 !important;
 }
 
 .white {
@@ -171,6 +171,17 @@ color: white;
 }
 
 .infobox {
-  height: 450px;
+  height: 400px;
+  margin-bottom: 0px;
 }
+
+.marg {
+margin-top: 15px;
+margin-left: 15px;
+}
+
+.zeromargtop {
+  margin-top: 0px;
+}
+
 

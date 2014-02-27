@@ -4,7 +4,7 @@ class CleaningsController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def account
-    @cleanings = Cleaning.where(user: current_user).order("created_at DESC")
+    @cleanings = Cleaning.where(user: current_user).order("created_at DESC").limit(4)
   end
 
   # GET /cleanings
@@ -35,7 +35,7 @@ class CleaningsController < ApplicationController
 
     respond_to do |format|
       if @cleaning.save
-        format.html { redirect_to @cleaning, notice: 'Cleaning was successfully created.' }
+        format.html { redirect_to account_path, notice: 'Cleaning was successfully created.' }
         format.json { render action: 'show', status: :created, location: @cleaning }
       else
         format.html { render action: 'new' }
@@ -63,7 +63,7 @@ class CleaningsController < ApplicationController
   def destroy
     @cleaning.destroy
     respond_to do |format|
-      format.html { redirect_to cleanings_url }
+      format.html { redirect_to account_path }
       format.json { head :no_content }
     end
   end
@@ -78,4 +78,10 @@ class CleaningsController < ApplicationController
     def cleaning_params
       params.require(:cleaning).permit(:month, :day, :hour, :minute, :ampm)
     end
+
+    def check_user
+      if current_user != @cleaning.user
+        redirect_to root_url, alert: "Sorry, this listing belongs to someone else."
+      end
+    end    
 end

@@ -1,0 +1,78 @@
+<div class="row centering">
+
+<div class="panel panel-default col-xs-4 infobox">
+  <div class="panel-heading">
+    <div class="panel-title center">
+      <h4 class="emerald"><span class="glyphicon glyphicon-home emerald"></span> &nbsp;&nbsp;&nbsp; Your Home Info</h4>
+    </div>
+  </div>
+  <div class="panel-body">
+
+		<h4 class="belize"><strong><%= current_user.name %> <%= current_user.lastname %></strong></h4>
+		<p><strong>Address to be cleaned:</strong></p>
+		<p><%= current_user.address %></p>
+		<p><%= current_user.city %></p>
+		<p><%= current_user.zip %></p>
+		<p><strong>Email: </strong><%= current_user.email %></p>
+		<p><strong>Phone: </strong><%= current_user.phone %></p>
+
+		</br>
+
+    <p><strong>Number of bedrooms:</strong> <%= current_user.bedrooms %></p>
+     <p><strong>Your Standard Cleaning Price:</strong><% if current_user.bedrooms == 1 %>
+    <%= "$75" %> 
+    <% elsif current_user.bedrooms == 2 %>
+    <%= "$95" %> 
+    <% elsif current_user.bedrooms == 3 %>
+    <%= "$115" %>  
+    <% elsif current_user.bedrooms == 4 %>
+    <%= "$135" %> 
+    <% elsif current_user.bedrooms == 5 %>
+    <%= "$155" %> 
+    <% elsif current_user.bedrooms == 6 %>
+    <%= "$185" %>
+    </p>
+  <% end %>
+
+		</div>
+		</div>
+
+<div class="panel panel-default col-xs-4 infobox">
+  <div class="panel-heading">
+    <div class="panel-title center">
+      <h4 class="emerald"><span class="glyphicon glyphicon-comment emerald"></span> &nbsp;&nbsp;&nbsp; Notes for your Maid</h4>
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+  <p><strong>Maid entry: </strong><%= current_user.keys %></p>
+  <p><strong>Parking info: </strong><%= current_user.parking %></p>
+  <p><strong>Pet info: </strong><%= current_user.pets %></p>
+  <p><strong>Location of trash: </strong><%= current_user.trash %></p>
+
+</div>
+
+</div>
+
+<div class="panel panel-default col-xs-4 infobox">
+  <div class="panel-heading">
+    <div class="panel-title center">
+      <h4 class="emerald"><span class="glyphicon glyphicon-exclamation-sign emerald"></span> &nbsp;&nbsp;&nbsp; Something will go Here</h4>
+    </div>
+  </div>
+
+  <div class="panel-body">
+
+  <p>Some kind of content should go here, perhaps a contact form, a form to buy gift cleanings, a form to refer friends, special offers, or cleaning history, or all of the above?</p>
+
+</div>
+
+</div>
+
+<div class="col-xs-12 centering center whiteback zeromargtop">
+</br>
+  <button type="button" class="btn btn-default btn"><%= link_to edit_user_registration_path do %><span class="glyphicon glyphicon-pencil"></span>  Edit Info<% end %></button>
+</br>
+</br>
+</div>

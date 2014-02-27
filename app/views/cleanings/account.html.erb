@@ -1,28 +1,39 @@
-<h1>Listing cleanings</h1>
+<div class="container">
 
-<table>
-  <thead>
-    <tr>
-      <th>Date</th>
-      <th>Time</th>
-      <th></th>
-      <th></th>
-      <th></th>
-    </tr>
-  </thead>
+<h3 class="cloudtext">Your MaidPing Account</h3>
+<hr class="featurette-divider">
 
-  <tbody>
+<div class="center"><button type="button" class="btn btn-default btn-lg"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Schedule a New Cleaning<% end %></button></div>
+<h4 class="cloudtext">Your most recently scheduled cleanings</h4>
+
+<table class="table whiteback table-condensed roundedtable center">
+  <tr>
+      <th class="center">Date</th>
+      <th class="center">Appointment Time</th>
+      <th class="center">Cleaning Directions For Maid</th>
+      <th class="center">Actions</th>
+  </tr>
+
     <% @cleanings.each do |cleaning| %>
       <tr>
-        <td><%= cleaning.month %></td>
-        <td><%= link_to 'Show', cleaning %></td>
-        <td><%= link_to 'Edit', edit_cleaning_path(cleaning) %></td>
-        <td><%= link_to 'Destroy', cleaning, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= cleaning.month %><%= cleaning.day %></td>
+        <td><%= cleaning.hour %><%= cleaning.minute %><%= cleaning.ampm %></td>
+        <td>Focus string will go here</td>
+        <td>
+          <div class="btn-group">
+          <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown">
+            Action <span class="caret"></span>
+          </button>
+          <ul class="dropdown-menu" role="menu">
+            <li><%= link_to 'Edit Cleaning', edit_cleaning_path(cleaning) %></li>
+            <li><%= link_to 'Cancel Cleaning', cleaning, method: :delete, data: { confirm: 'Are you sure? Cancellations within 24 hours of cleaning will have a cancellation fee of $ 50.00' } %></li>
+          </ul>
+          </div>
+        </td>
       </tr>
     <% end %>
-  </tbody>
 </table>
 
-<br>
-
-<%= link_to 'New Cleaning', new_cleaning_path %>
+<h4 class="cloudtext">Your Info</h4>
+<%= render 'pages/customerinfo' %>
+</div>

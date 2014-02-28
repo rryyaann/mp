@@ -7,18 +7,53 @@
 </br>
 <h4 class="cloudtext">Your most recently scheduled cleanings</h4>
 
-<table class="table whiteback table-condensed roundedtable center">
+<table class="table whiteback table-condensed table-bordered roundedtable center">
   <tr>
       <th class="center">Date</th>
       <th class="center">Appointment Time</th>
-      <th class="center">Cleaning Directions For Maid</th>
+      <th class="center">Cleaning Directions For Your Maid</th>
       <th class="center"></th>
   </tr>
 
     <% @cleanings.each do |cleaning| %>
       <tr>
-        <td><%= cleaning.month %><%= cleaning.day %></td>
-        <td><%= cleaning.hour %><%= cleaning.minute %><%= cleaning.ampm %></td>
+        <td><% if cleaning.month == 1 %>
+    <%= "January" %> 
+    <% elsif cleaning.month == 2 %>
+    <%= "February" %> 
+    <% elsif cleaning.month == 3 %>
+    <%= "March" %>  
+    <% elsif cleaning.month == 4 %>
+    <%= "April" %> 
+    <% elsif cleaning.month == 5 %>
+    <%= "May" %> 
+    <% elsif cleaning.month == 6 %>
+    <%= "June" %>
+    <% elsif cleaning.month == 7 %>
+    <%= "July" %>
+    <% elsif cleaning.month == 8 %>
+    <%= "August" %>
+    <% elsif cleaning.month == 9 %>
+    <%= "September" %>
+    <% elsif cleaning.month == 10 %>
+    <%= "October" %>
+    <% elsif cleaning.month == 11 %>
+    <%= "November" %>
+    <% elsif cleaning.month == 12 %>
+    <%= "December" %>
+  <% end %>
+  <%= cleaning.day %></td>
+        <td><%= cleaning.hour %>:<% if cleaning.minute == 1 %>
+    <%= "00" %> 
+    <% else %>
+      <%= "30" %>
+    <% end %>
+    <% if cleaning.ampm == 1 %>
+       <%= "AM" %> 
+    <% else %>
+       <%= "PM" %>
+    <% end %>
+  </td>
         <td><%= cleaning.focus %></td>
         <td>
           <div class="btn-group">

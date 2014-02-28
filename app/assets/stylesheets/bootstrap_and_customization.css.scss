@@ -185,4 +185,13 @@ margin-left: 15px;
   border-bottom-left-radius: 5px;
 }
 
+.unroundedtop {
+  border-top-right-radius: 0px;
+  border-top-left-radius: 0px;
+}
+
+.unroundedbottom {
+  border-bottom-right-radius: 0px;
+  border-bottom-left-radius: 0px;
+}
 

@@ -76,7 +76,7 @@ class CleaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaning_params
-      params.require(:cleaning).permit(:month, :day, :hour, :minute, :ampm)
+      params.require(:cleaning).permit(:month, :day, :hour, :minute, :ampm, :focus)
     end
 
     def check_user

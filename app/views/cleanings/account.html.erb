@@ -1,18 +1,18 @@
 <div class="container">
 
-<h3 class="cloudtext">Welcome back, <%= current_user.name %></h3>
+<h3 class="cloudtext">Your Account&nbsp;&nbsp;&nbsp;|&nbsp;&nbsp;&nbsp;Welcome back, <%= current_user.name %></h3>
 <hr class="featurette-divider">
 
-<div><button type="button" class="btn btn-default btn-lg"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Schedule a New Cleaning<% end %></button></div>
+<div><button type="button" class="btn btn-default btn-lg"><%= link_to new_cleaning_path do %><span class="glyphicon glyphicon-calendar"></span>  Schedule your next cleaning<% end %></button></div>
 </br>
 <h4 class="cloudtext">Your most recently scheduled cleanings</h4>
 
-<table class="table whiteback table-condensed table-bordered roundedtable center">
+<table class="table whiteback table-condensed table-bordered center">
   <tr>
-      <th class="center">Date</th>
-      <th class="center">Appointment Time</th>
-      <th class="center">Cleaning Directions For Your Maid</th>
-      <th class="center"></th>
+      <th class="center belize">Date</th>
+      <th class="center belize">Time</th>
+      <th class="center belize">Cleaning Directions</th>
+      <th class="center belize"></th>
   </tr>
 
     <% @cleanings.each do |cleaning| %>
@@ -57,11 +57,11 @@
         <td><%= cleaning.focus %></td>
         <td>
           <div class="btn-group">
-          <button type="button" class="btn btn-info dropdown-toggle btn-sm" data-toggle="dropdown">
+          <button type="button" class="btn btn-default dropdown-toggle btn-sm" data-toggle="dropdown">
             Action <span class="caret"></span>
           </button>
           <ul class="dropdown-menu" role="menu">
-            <li><%= link_to 'Cancel Cleaning', cleaning, method: :delete, data: { confirm: 'Are you sure? Cancellations within 24 hours of cleaning will have a cancellation fee of $ 50.00' } %></li>
+            <li><%= link_to 'Cancel Cleaning', cleaning, method: :delete, data: { confirm: 'Are you sure? Cancellations or reschedules within 24 hours of cleaning appointment will have a fee of $ 40.00' } %></li>
           </ul>
           </div>
         </td>

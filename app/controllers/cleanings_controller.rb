@@ -4,7 +4,7 @@ class CleaningsController < ApplicationController
   before_filter :check_user, only: [:edit, :update, :destroy]
 
   def account
-    @cleanings = Cleaning.where(user: current_user).order("created_at DESC").limit(4)
+    @cleanings = Cleaning.where(user: current_user).order("created_at DESC").limit(3)
   end
 
   # GET /cleanings
@@ -76,7 +76,7 @@ class CleaningsController < ApplicationController
 
     # Never trust parameters from the scary internet, only allow the white list through.
     def cleaning_params
-      params.require(:cleaning).permit(:month, :day, :hour, :minute, :ampm, :focus)
+      params.require(:cleaning).permit(:month, :day, :hour, :minute, :ampm, :focus, :frequency)
     end
 
     def check_user

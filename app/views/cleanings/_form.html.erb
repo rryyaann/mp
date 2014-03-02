@@ -16,16 +16,17 @@
   <div class="panel-heading">
     <div class="panel-title center">
       <h2 class="emerald"><span class="glyphicon glyphicon-calendar"></span> You're 10 secs from scheduling a maid, <%= current_user.name %>!</h2>
-      <h4 class="belize">Please schedule your cleaning at least 24 hours in advance</h4>
+      <h4 class="text-muted">Please schedule your cleaning at least 24 hours in advance</h4>
     </div>
   </div>
 
 <div class="panel-body">
-<div class="row form-group">
+<div class="row form-group center">
    <div class="col-xs-6 belize">
      <div class="form-group">
        <%= f.label :how_often_would_you_like_your_home_cleaned? %> 
        <%= f.select(:frequency, options_for_select([['One Time', 1], ['Every Two Weeks (Most Popular)', 2], ['Every Week', 3], ['Every Three Weeks', 4], ['Once a Month', 5]]), {}, {class: "form-control"}) %>
+       <span class=" center help-block">No long term contracts ~ No worries.</span>
      </div>
  </div>
 </div>

@@ -19,20 +19,30 @@
 		</br>
 
     <p><strong>Number of bedrooms:</strong> <%= current_user.bedrooms %></p>
-     <p><strong>Your Standard Cleaning Price:</strong><% if current_user.bedrooms == 1 %>
-    <%= "$75" %> 
-    <% elsif current_user.bedrooms == 2 %>
-    <%= "$95" %> 
-    <% elsif current_user.bedrooms == 3 %>
-    <%= "$115" %>  
-    <% elsif current_user.bedrooms == 4 %>
-    <%= "$135" %> 
-    <% elsif current_user.bedrooms == 5 %>
-    <%= "$155" %> 
-    <% elsif current_user.bedrooms == 6 %>
-    <%= "$185" %>
-    </p>
-  <% end %>
+
+    <p><strong>Number of bathrooms:</strong> <% if current_user.bathrooms == 1 %>
+      <% "0 or 1" %> 
+      <% else %>
+      <%= current_user.bathrooms %>
+      <% end %></p>
+
+      <p><strong>Square Feet:</strong> <% if current_user.sf == 1 %>
+      <%= "0-500 sf" %> 
+      <% elsif current_user.sf == 2 %>
+      <%= "500-1000 sf" %>
+      <% elsif current_user.sf == 3 %>
+      <%= "1000-2000 sf" %>
+      <% elsif current_user.sf == 4 %>
+      <%= "2000-3000 sf" %>
+      <% elsif current_user.sf == 5 %>
+      <%= "3000-4000 sf" %>
+      <% elsif current_user.sf == 6 %>
+      <%= "4000-5000 sf" %>
+      <% elsif current_user.sf == 7 %>
+      <%= "5000+ sf" %>
+      <% end %></p>
+
+     <p><strong>Your Standard Cleaning Price:</strong>
 
 		</div>
 		</div>

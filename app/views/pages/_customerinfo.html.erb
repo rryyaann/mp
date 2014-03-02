@@ -18,10 +18,11 @@
 
 		</br>
 
-    <p><strong>Number of bedrooms:</strong> <%= current_user.bedrooms %></p>
+    <p><strong>Bedrooms:</strong> <% if current_user.bedrooms == 1 %>
+      <%= "Studio or 1 bedroom" %><% else %><%= current_user.bedrooms %><% end %></p>
 
-    <p><strong>Number of bathrooms:</strong> <% if current_user.bathrooms == 1 %>
-      <% "0 or 1" %> 
+    <p><strong>Bathrooms:</strong> <% if current_user.bathrooms == 1 %>
+      <%= "0 or 1" %> 
       <% else %>
       <%= current_user.bathrooms %>
       <% end %></p>
@@ -60,6 +61,24 @@
       <% elsif current_user.sf == 7 %>
       <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 190 %>
       <% end %>
+    </p>
+
+    <p><strong>Your Standard Cleaning Time:</strong>
+      <% if current_user.sf == 1  %>
+      <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) %>
+      <% elsif current_user.sf == 2 %>
+      <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) + 0.5 %>
+      <% elsif current_user.sf == 3 %>
+       <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) + 1.5 %>
+      <% elsif current_user.sf == 4 %>
+       <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) + 3.5 %>
+       <% elsif current_user.sf == 5 %>
+       <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) + 5.5 %>
+       <% elsif current_user.sf == 6 %>
+       <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) + 7.5 %>
+      <% elsif current_user.sf == 7 %>
+       <%= 2.5 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) + 8.5 %>
+      <% end %> hours
     </p>
 
 		</div>

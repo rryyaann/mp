@@ -11,4 +11,6 @@ class PagesController < ApplicationController
   end
   def profile
   end
+  def analytics
+  end
 end

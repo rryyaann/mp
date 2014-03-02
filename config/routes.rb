@@ -11,6 +11,7 @@ Mp::Application.routes.draw do
   get "book" => "pages#book"
   get "profile" => "pages#profile"
   get 'account' => "cleanings#account"
+  get "analytics" => "pages#analytics"
  
 
 

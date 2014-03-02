@@ -1,0 +1,17 @@
+<div class="container">
+<h1 class="cloudtext center">Analytics Dashboard</h3>
+
+<div class="jumbotron center">
+	<h2 class="center belize">Averages</h2>
+	<p>Average Number of Bedrooms: <%=  User.average :bedrooms %></p>
+	<p>Average Number of Bathrooms: <%=  User.average :bathrooms %></p>
+	<p>Average Number of Cleanings Per Customer: <%=  Cleaning.count / User.count %></p>
+
+	<h2 class="center belize">Totals</h2>
+	<p>Total Number of Customers: <%=  User.count %></p>
+	<p>Total Number of Cleanings: <%=  Cleaning.count %></p>
+	<p>Total Number of Bedrooms: <%=  User.sum :bedrooms %></p>
+	<p>Total Number of Bathrooms: <%=  User.sum :bathrooms %></p>
+
+</div>
+</div>

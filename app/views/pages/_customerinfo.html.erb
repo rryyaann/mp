@@ -42,7 +42,25 @@
       <%= "5000+ sf" %>
       <% end %></p>
 
-     <p><strong>Your Standard Cleaning Price:</strong>
+    </br>
+
+     <p><strong>Your Standard Cleaning Price:</strong> $
+      <% if current_user.sf == 1  %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 %>
+      <% elsif current_user.sf == 2 %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 10 %>
+      <% elsif current_user.sf == 3 %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 30 %>
+      <% elsif current_user.sf == 4 %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 70 %>
+       <% elsif current_user.sf == 5 %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 110 %>
+       <% elsif current_user.sf == 6 %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 150 %>
+      <% elsif current_user.sf == 7 %>
+      <%= 55 + (current_user.bedrooms - 1 + current_user.bathrooms - 1) * 10 + 190 %>
+      <% end %>
+    </p>
 
 		</div>
 		</div>
